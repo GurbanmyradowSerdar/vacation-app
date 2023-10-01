@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, TouchableOpacity, View, StyleSheet, Image} from 'react-native';
-import PrimiryText from '../../components/text/PrimiryText';
+import PrimaryText from '../../components/text/PrimaryText';
 import SecondaryText from '../../components/text/SecondaryText';
 import {IStartComponentInterface} from '../../types';
 
@@ -20,7 +20,7 @@ const StartComponentScreen = ({handleOnClick}: IStartComponentInterface) => {
       </View>
       <View style={styles.mainContainer}>
         <View style={styles.textContent}>
-          <PrimiryText title="Planning Your Next Vacation" />
+          <PrimaryText title="Planning Your Next Vacation" />
           <SecondaryText
             style={{textAlign: 'center'}}
             title="Escape to paradise. Unwind, relax, and rejuvenate on your dream vacation. Book now for an unforgettable getaway!"

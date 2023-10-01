@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text} from 'react-native';
-import {IPrimiryTextInterface} from '../../types';
+import {IPrimaryTextInterface} from '../../types';
 
-const PrimiryText = (props: IPrimiryTextInterface) => {
+const PrimaryText = (props: IPrimaryTextInterface) => {
   return (
     <Text
       style={{
@@ -17,4 +17,4 @@ const PrimiryText = (props: IPrimiryTextInterface) => {
   );
 };
 
-export default PrimiryText;
+export default PrimaryText;
