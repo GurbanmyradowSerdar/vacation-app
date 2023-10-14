@@ -20,9 +20,12 @@ const StartComponentScreen = ({handleOnClick}: IStartComponentInterface) => {
       </View>
       <View style={styles.mainContainer}>
         <View style={styles.textContent}>
-          <PrimaryText title="Planning Your Next Vacation" />
+          <PrimaryText
+            title="Planning Your Next Vacation"
+            style={{lineHeight: 53}}
+          />
           <SecondaryText
-            style={{textAlign: 'center'}}
+            style={{textAlign: 'center', lineHeight: 20}}
             title="Escape to paradise. Unwind, relax, and rejuvenate on your dream vacation. Book now for an unforgettable getaway!"
           />
         </View>
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
     alignContent: 'flex-end',
     justifyContent: 'flex-end',
   },
-  image: {width: '100%', height: '85%'},
+  image: {width: '100%', height: '90%'},
   dotsContainer: {
     flex: 0.02,
     display: 'flex',

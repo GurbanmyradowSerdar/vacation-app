@@ -7,7 +7,6 @@ const SecondaryText = (props: ISecondaryTextInterface) => {
     <Text
       style={{
         fontFamily: 'IBMPlexSans-Regular',
-        lineHeight: 20,
         fontSize: 16,
         color: '#7C868F',
         ...props.style,

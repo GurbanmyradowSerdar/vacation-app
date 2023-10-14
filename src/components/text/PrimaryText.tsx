@@ -7,7 +7,6 @@ const PrimaryText = (props: IPrimaryTextInterface) => {
     <Text
       style={{
         fontFamily: 'IBMPlexSans-Bold',
-        lineHeight: 53,
         fontSize: 41,
         color: '#232121',
         ...props.style,

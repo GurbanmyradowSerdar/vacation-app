@@ -1,4 +1,4 @@
-import {TextStyle} from 'react-native';
+import {TextStyle, ViewStyle} from 'react-native';
 
 export interface IPrimaryTextInterface {
   title: string;
@@ -20,4 +20,9 @@ export interface IHomeCarouselCardInterface {
   subtitle: string;
   rating: number;
   onCardPress?: () => void;
+}
+
+export interface IHomeHorizontalWrapperInterface {
+  style?: ViewStyle;
+  children: React.ReactNode;
 }
