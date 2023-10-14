@@ -87,12 +87,20 @@ const HomeComponentScreen = () => {
         </ImageBackground>
       </HomeScreenHorizontalWrapper>
       {/* Horizontal Carousel */}
-      <View id="carousel">
-        <View>
-          <PrimaryText title="Recommended Place" />
-          <SecondaryText title="View All" />
-        </View>
-        <ScrollView horizontal>
+      <View style={styles.carousel.container}>
+        <HomeScreenHorizontalWrapper style={styles.carousel.textWrapper}>
+          <PrimaryText
+            title="Recommended Place"
+            style={styles.carousel.title}
+          />
+          <TouchableOpacity activeOpacity={0.6}>
+            <SecondaryText title="View All" style={styles.carousel.viewAll} />
+          </TouchableOpacity>
+        </HomeScreenHorizontalWrapper>
+        <ScrollView
+          horizontal
+          style={styles.carousel.carouselWrapper}
+          showsHorizontalScrollIndicator={false}>
           {data.map((item, index) => {
             return (
               <HomeCarouselCardComponent
@@ -106,7 +114,8 @@ const HomeComponentScreen = () => {
           })}
         </ScrollView>
       </View>
-      <View id="friends">
+      {/* Friends */}
+      {/* <HomeScreenHorizontalWrapper>
         <View>
           <PrimaryText title="Your Friends" />
           <Text>
@@ -126,7 +135,7 @@ const HomeComponentScreen = () => {
             <PrimaryText title="21+" />
           </View>
         </View>
-      </View>
+      </HomeScreenHorizontalWrapper> */}
     </View>
   );
 };
@@ -246,6 +255,26 @@ const styles = {
       borderRadius: 9,
     },
     buttonImage: {},
+  }),
+  carousel: StyleSheet.create({
+    container: {
+      gap: 30,
+    },
+    textWrapper: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+    title: {
+      fontSize: 20,
+    },
+    viewAll: {
+      fontSize: 16,
+    },
+    carouselWrapper: {
+      marginVertical: -20,
+    },
   }),
 };
 
