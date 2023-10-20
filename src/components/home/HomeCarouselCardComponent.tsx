@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, Image, StyleSheet, Platform} from 'react-native';
+import {
+  View,
+  Image,
+  StyleSheet,
+  Platform,
+  TouchableOpacity,
+} from 'react-native';
 import {IHomeCarouselCardInterface} from '../../types';
 import PrimaryText from '../text/PrimaryText';
 import SecondaryText from '../text/SecondaryText';
@@ -10,10 +16,14 @@ const mountains = require('../../assets/images/mountains.jpg');
 
 const HomeCarouselCardComponent = (props: IHomeCarouselCardInterface) => {
   return (
-    <View
+    <TouchableOpacity
+      activeOpacity={0.9}
       style={{
         ...styles.container,
         ...(props.img === 'beach-2.jpg' ? {marginLeft: 20} : null),
+      }}
+      onPress={() => {
+        props.onCardPress(props.img, props.title, props.rating);
       }}>
       <Image
         source={props.img === 'beach-2.jpg' ? beach : mountains}
@@ -38,7 +48,7 @@ const HomeCarouselCardComponent = (props: IHomeCarouselCardInterface) => {
           />
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

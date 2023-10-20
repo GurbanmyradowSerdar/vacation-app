@@ -8,15 +8,16 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import HolidayScreen from './src/screens/Holiday';
-import {View} from 'react-native';
-import StartContainerScreen from './src/screens/Start/StartContainer';
-import HomeContainerScreen from './src/screens/Home/HomeContainer';
+import StartContainerScreen from './src/screens/start/StartContainer';
+import HomeContainerScreen from './src/screens/home/HomeContainer';
+import HolidayContainerScreen from './src/screens/holiday/HolidayContainer';
 
 export type RootStackParamList = {
   home: undefined;
   holiday: {
     id: string;
+    rating: number;
+    name: string;
   };
   start: undefined;
 };
@@ -46,7 +47,15 @@ function App(): JSX.Element {
             },
           }}
         />
-        <Stack.Screen name="holiday" component={HolidayScreen} />
+        <Stack.Screen
+          name="holiday"
+          component={HolidayContainerScreen}
+          options={{
+            header: () => {
+              return <></>;
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

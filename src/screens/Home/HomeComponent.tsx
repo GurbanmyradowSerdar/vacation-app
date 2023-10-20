@@ -11,13 +11,13 @@ import {
 } from 'react-native';
 import SecondaryText from '../../components/text/SecondaryText';
 import PrimaryText from '../../components/text/PrimaryText';
-import {IHomeCarouselCardInterface} from '../../types';
+import {IHomeCarouselCardInterface, IHomeComponentInteface} from '../../types';
 import HomeCarouselCardComponent from '../../components/home/HomeCarouselCardComponent';
 import HomeScreenHorizontalWrapper from '../../components/wrapper/HomeScreenHorizontalWrapper';
 import BellIcon from '../../assets/images/bell.svg';
 import ArrowIcon from '../../assets/images/arrow.svg';
 
-const data: IHomeCarouselCardInterface[] = [
+const data: Omit<IHomeCarouselCardInterface, 'onCardPress'>[] = [
   {
     img: 'beach-2.jpg',
     rating: 4.5,
@@ -32,7 +32,7 @@ const data: IHomeCarouselCardInterface[] = [
   },
 ];
 
-const HomeComponentScreen = () => {
+const HomeComponentScreen = ({onCardPress}: IHomeComponentInteface) => {
   return (
     <ScrollView>
       <View style={styles.main.wrapper}>
@@ -110,6 +110,7 @@ const HomeComponentScreen = () => {
                   rating={item.rating}
                   subtitle={item.subtitle}
                   title={item.title}
+                  onCardPress={onCardPress}
                 />
               );
             })}
@@ -319,7 +320,7 @@ const styles = {
       borderRadius: 100,
       overflow: 'hidden',
       position: 'absolute',
-      right: 44,
+      right: 40,
       top: 0,
     },
     avatarWrapper1: {
@@ -329,7 +330,7 @@ const styles = {
       borderRadius: 100,
       overflow: 'hidden',
       position: 'absolute',
-      right: 22,
+      right: 20,
       top: 0,
     },
     avatar: {
@@ -341,7 +342,6 @@ const styles = {
       backgroundColor: '#FFC15F',
       width: 36,
       height: 36,
-      objectFit: 'contain',
       borderWidth: 2,
       borderColor: '#fff',
       borderRadius: 100,
